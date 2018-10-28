@@ -99,6 +99,7 @@ Options::Options(QWidget *parent) :
     QWidget::setTabOrder(lineTable, lineUser);
     QWidget::setTabOrder(lineUser, buttonOptions);
 
+    // Set user name to hostname of the host computer
     lineUser->setText(QHostInfo::localHostName());
 
     connect(buttonOptions, SIGNAL(clicked()), this, SLOT(accept()));
