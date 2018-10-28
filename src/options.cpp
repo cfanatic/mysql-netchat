@@ -1,5 +1,15 @@
 #include "options.h"
 
+/*
+ *   !!! WARNING !!!
+ *   ---------------
+ *   It is not recommended to use this pre-defined encryption key!
+ *   Change the key within the application, before you start texting.
+ *
+*/
+
+#define ENCRYPTION_KEY  "!change-this-key!"
+
 Options::Options(QWidget *parent) :
     QDialog(parent)
 {
@@ -87,7 +97,7 @@ Options::Options(QWidget *parent) :
     labelAddress->setText(QApplication::translate("Dialog", "Address:", 0));
     groupEncryption->setTitle(QApplication::translate("Dialog", "Encryption", 0));
     labelEncryption->setText(QApplication::translate("Dialog", "AES-256 Key:", 0));
-    lineEncryption->setText(QApplication::translate("Dialog", "car-tree-subway-fish", 0));
+    lineEncryption->setText(QApplication::translate("Dialog", ENCRYPTION_KEY, 0));
     checkEncryption->setText(QApplication::translate("Dialog", "Disable", 0));
     buttonOptions->setText(QApplication::translate("Dialog", "Open Connection", 0));
 
