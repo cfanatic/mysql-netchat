@@ -1,0 +1,7 @@
+[Database]
+address = <domain or IP>
+port = <port>
+name = <MySQL database name>
+table = <MySQL database table>
+login = <MySQL database user>
+password = <MySQL user password>
