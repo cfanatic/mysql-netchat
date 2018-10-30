@@ -1,23 +1,30 @@
 #include "database.h"
 
 Database::Database(QObject *parent, Configuration *config) :
+    m_config(config),
     QObject(parent)
 {
     // Initialize database
-    m_name = config->get(Configuration::NAME);
-    m_address = config->get(Configuration::ADDRESS);
-    m_port = config->get(Configuration::PORT);
-    m_table = config->get(Configuration::TABLE);
-    m_login = config->get(Configuration::LOGIN);
-    m_password = config->get(Configuration::PASSWORD);
-    m_user = config->get(Configuration::USER);
+    this->init();
 }
 
 Database::~Database()
 {
 }
 
-bool Database::init()
+void Database::init()
+{
+    // Set configuration parameters
+    m_name = m_config->get(Configuration::NAME);
+    m_address = m_config->get(Configuration::ADDRESS);
+    m_port = m_config->get(Configuration::PORT);
+    m_table = m_config->get(Configuration::TABLE);
+    m_login = m_config->get(Configuration::LOGIN);
+    m_password = m_config->get(Configuration::PASSWORD);
+    m_user = m_config->get(Configuration::USER);
+}
+
+bool Database::open()
 {
     // Open database connection
     m_db = QSqlDatabase::addDatabase("QMYSQL");

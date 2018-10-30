@@ -71,13 +71,15 @@ void Netchat::init()
     try
     {
         // Open database connection
-        bool connection;
-        connection = m_database->init();
+        bool success;
+        m_database->init();
+        success = m_database->open();
 
         // Calculate encryption data and begin to pull messages
-        if (connection == true)
+        if (success == true)
         {
             m_encryption->init();
+            m_encryption->prepare();
             m_polling->start();
         }
     }
@@ -99,6 +101,9 @@ void Netchat::options()
     // Show options window
     if (m_options->exec() == QDialog::Accepted)
     {
+        // Load configuration parameters
+        m_options->load(m_config);
+
         // Close database connection and stop pulling messages
         m_database->close();
         m_polling->stop();

@@ -1,11 +1,11 @@
 #include "encryption.h"
 
 Encryption::Encryption(QWidget *parent, Configuration *config) :
+    m_config(config),
     QWidget(parent)
 {
     // Initialize encryption
-    m_user = config->get(Configuration::USER);
-    m_key = config->get(Configuration::KEY);
+    this->init();
 }
 
 Encryption::~Encryption()
@@ -14,6 +14,13 @@ Encryption::~Encryption()
 }
 
 void Encryption::init()
+{
+    // Set configuration parameters
+    m_user = m_config->get(Configuration::USER);
+    m_key = m_config->get(Configuration::KEY);
+}
+
+void Encryption::prepare()
 {
     // Initialize encryption salt
     Botan::AutoSeeded_RNG rng;

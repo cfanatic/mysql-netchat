@@ -32,7 +32,8 @@ public:
     explicit Database(QObject *parent, Configuration *config);
     ~Database();
 
-    bool init();
+    void init();
+    bool open();
     void close();
     bool table();
     bool sendQuery(const QByteArray salt, const QString text, const quint8 aux, const quint8 enc);
@@ -49,6 +50,7 @@ public:
     QString m_password;
 
 private:
+    Configuration *m_config;
 
 public slots:
 

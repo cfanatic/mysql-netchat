@@ -29,9 +29,11 @@ public:
     QMap<Botan::SecureVector<quint8>, Botan::SymmetricKey> m_aes256_keys;
 
 private:
+    Configuration *m_config;
 
 public slots:
     void init();
+    void prepare();
     void key(const Botan::SecureVector<quint8> salt);
     QString encrypt(const QString text);
     QString decrypt(const Botan::SecureVector<quint8> salt, const QString text);
