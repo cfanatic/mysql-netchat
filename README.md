@@ -1,6 +1,5 @@
 # mysql-Netchat
-This repository features a chat messenger with database management and encryption support. 
-Similar to [**p2p-Netchat**](https://github.com/cfanatic/p2p-netchat) which deploys a direct peer-to-peer communication using UDP.
+This repository features a chat messenger with database management and encryption support.
 
 Following is a summary of the main features:
 - [x] Database message management with MySQL
