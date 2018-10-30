@@ -22,7 +22,7 @@ Make sure that the Botan library is successfully installed on your system. Visit
 Open _netchat.pro_ in Qt Creater and run the build process. 
 
 ## Architecture
-Depicted below is the software architecture which illustrates the dependency of the corresponding C++ classes to each other:
+Depicted below is the software architecture which illustrates the dependency of the C++ classes to each other:
 
 ![Communication model](https://raw.githubusercontent.com/cfanatic/mysql-netchat/master/res/architecture.png)
 
@@ -31,7 +31,7 @@ _Netchat_ and _Options_ define the core messenger system. _Database_, _Encryptio
 ## Usage
 Since this repository is the successor of [**p2p-Netchat**](https://github.com/cfanatic/p2p-netchat), the usage is similar.
 
-If the database server and the configuration file is set up correctly, you can begin texting as soon as the application is started.
+If the database server and the configuration file is set up correctly, you can begin texting right from the start.
 
 ![Chat window](https://raw.githubusercontent.com/cfanatic/mysql-netchat/master/res/preview_chat.png)
 ![Database window](https://raw.githubusercontent.com/cfanatic/mysql-netchat/master/res/preview_mysql.png)
